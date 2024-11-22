@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reporte.css') }}">
+    <title>Resultados de Optimización</title>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Reporte de Resultados</h1>
+        </header>
+        <section class="section">
+            <div class="section-header">
+                <h2>Tipo de Optimización</h2>
+            </div>
+            <p>{{ tipo_optimizacion|capitalize }}</p>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <h2>Valor Óptimo</h2>
+            </div>
+            <p><strong>{{ valor_optimo }}</strong></p>
+        </section>
+        <section class="section">
+            <div class="section-header">
+                <h2>Valores de las Variables</h2>
+            </div>
+            <ul>
+                {% for var, value in resultados.items() %}
+                    <li><strong>{{ var }}:</strong> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <footer>
+            <a href="/">Volver al inicio</a>
+        </footer>
+    </div>
+</body>
+</html>

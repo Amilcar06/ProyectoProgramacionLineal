@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Características del Problema</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img alt="Logo" src="{{ url_for('static', filename='images/logo.webp') }}" width="30" height="30">
+            <h1>Características del Problema</h1>
+        </div>
+        <div class="content">
+            <form action="/formulario" method="POST">
+                <div class="input-group">
+                    <label for="decision-variables">Número de Variables de Decisión:</label>
+                    <input id="decision-variables" name="decision-variables" type="number" value="0" min="0" required>
+                </div>
+                <div class="input-group">
+                    <label for="constraints">Número de Restricciones:</label>
+                    <input id="constraints" name="constraints" type="number" value="0" min="0" required>
+                </div>
+                <div class="optimization-type">
+                    <label>Tipo de Optimización</label>
+                    <div class="radio-group">
+                        <input id="maximizacion" name="optimizacion" type="radio" value="maximizacion">
+                        <label for="maximizacion">Maximizar</label>
+                        <input id="minimizacion" name="optimizacion" type="radio" value="minimizacion">
+                        <label for="minimizacion">Minimizar</label>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="text-gray-700 hover:text-blue-500">Ok</button>
+                    <button type="reset">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

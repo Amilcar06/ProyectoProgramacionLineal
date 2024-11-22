@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulario.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Tipo de Optimización: {{ tipo_optimizacion|capitalize }}</h1>
+        </div>
+        <form action="/resolver" method="POST">
+            <!-- Enviar datos dinámicos ocultos -->
+            <input type="hidden" name="tipo_optimizacion" value="{{ tipo_optimizacion }}">
+            <input type="hidden" name="variables_decision" value="{{ variables_decision }}">
+            <input type="hidden" name="restricciones" value="{{ restricciones }}">
+
+            <div class="section">
+                <div class="section-header">
+                    <h2>Función Objetivo</h2>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>Nombres de Variables:</th>
+                            {% for i in range(1, variables_decision + 1) %}
+                                <th>X{{ i }}</th>
+                            {% endfor %}
+                        </tr>
+                        <tr>
+                            <td>Coeficientes:</td>
+                            {% for i in range(variables_decision) %}
+                                <td><input type="number" name="coef_{{ i }}" placeholder="Ej: 5" required></td>
+                            {% endfor %}
+                        </tr>
+                    </table>
+                </div>
+            </div>        
+            
+            <div class="section">
+                <div class="section-header">
+                    <h2>Restricciones</h2>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>Casos:</th>
+                            {% for i in range(1, variables_decision + 1) %}
+                                <th>X{{ i }}</th>
+                            {% endfor %}
+                            <th>Relación (&lt;, =, &gt;)</th>
+                            <th>Lado Derecho</th>
+                        </tr>
+                        {% for j in range(1, restricciones + 1) %}
+                            <tr>
+                                <td>R{{ j }}</td>
+                                {% for i in range(variables_decision) %}
+                                    <td><input type="number" name="constraint_{{ j }}_var_{{ i }}" placeholder="Ej: 3" required></td>
+                                {% endfor %}
+                                <td>
+                                    <select name="constraint_{{ j }}_relation">
+                                        <option value="<">&lt;</option>
+                                        <option value="=">=</option>
+                                        <option value=">">&gt;</option>
+                                    </select>
+                                </td>
+                                <td><input type="number" name="constraint_{{ j }}_rhs" placeholder="Ej: 10" required></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+            <button type="submit">Resolver</button>
+        </form>        
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            if (!confirm('¿Estás seguro de que deseas resolver este problema?')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+body {
+    background-color: #C0C0FF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    width: 320px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+}
+.header {
+    background-color: #000080;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+}
+.header img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.header h1 {
+    font-size: 16px;
+    margin: 0;
+}
+.content {
+    margin-top: 20px;
+}
+.content label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333333;
+}
+.content .input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.content .input-group input[type="text"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.content .optimization-type {
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.content .optimization-type .radio-group {
+    display: flex;
+    align-items: center;
+}
+.content .optimization-type label {
+    font-size: 14px;
+    color: #333333;
+}
+.content .optimization-type input[type="radio"] {
+    margin-right: 5px;
+    width: 10px;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.buttons button:first-child {
+    background-color: #000080;
+    color: #FFFFFF;
+}
+.buttons button:last-child {
+    background-color: #CCCCCC;
+    color: #333333;
+}
+/* Ocultar las flechas en los campos de tipo number */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    -webkit-appearance: none; /* Chrome, Safari, Opera */
+    appearance: none; /* Estándar */
+    margin: 0; /* Remueve cualquier margen adicional */
+}
+
+/* Asegurar espacio suficiente para 3 cifras */
+input[type="number"] {
+    width: 3.5rem; /* Espacio para al menos 3 cifras y algo más */
+    padding: 3px; /* Espaciado interno */
+    text-align: center; /* Centra el contenido */
+    font-size: 1rem; /* Tamaño de fuente legible */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Asegurar consistencia entre navegadores */
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0; /* Eliminar espacio adicional en algunos navegadores */
+}
