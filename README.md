@@ -26,12 +26,12 @@ Este sistema simplifica la formulación y solución de modelos matemáticos al p
 
 1. Clona el repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/amilcar-chipana/proyecto-programacion-lineal.git
+   git clone https://github.com/Amilcar06/ProyectoProgramacionLineal.git
    ```
 
 2. Navega al directorio del proyecto:
    ```bash
-   cd proyecto-programacion-lineal
+   cd ProyectoProgramacionLineal
    ```
 
 3. Crea y activa un entorno virtual:
@@ -64,7 +64,7 @@ Este sistema simplifica la formulación y solución de modelos matemáticos al p
 ## Estructura del Proyecto
 
 ```
-/proyecto-programacion-lineal
+/ProyectoProgramacionLineal
 ├── app.py             # Archivo principal de la aplicación Flask.
 ├── templates/         # Plantillas HTML (index.html, formulario.html, resultado.html).
 ├── static/            # Archivos estáticos como CSS, JS, e imágenes.
