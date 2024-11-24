@@ -13,7 +13,7 @@ body {
     margin: 20px auto;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 15px;
+    padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
@@ -22,7 +22,7 @@ body {
 .header {
     background-color: #4B0082;
     color: white;
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     border-radius: 8px 8px 0 0;
 }
@@ -34,7 +34,7 @@ body {
 
 /* Section Styles */
 .section {
-    margin-top: 5px;
+    margin-top: 2px;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
@@ -43,7 +43,7 @@ body {
 .section-header {
     background-color: #4B0082;
     color: white;
-    padding: 10px;
+    padding: 5px;
     font-weight: bold;
     text-align: center;
     border-bottom: 1px solid #ccc;
@@ -79,7 +79,7 @@ th {
     color: white;
 }
 
-td input[type="number"], td select {
+td input[type="text"], td select, .coef-input {
     width: 3.5rem;
     padding: 5px;
     margin: 0;
@@ -88,33 +88,6 @@ td input[type="number"], td select {
     font-size: 0.8rem;
     box-sizing: border-box;
 }
-
-/* Ocultar las flechas en los campos de tipo number */
-input[type="number"] {
-    -moz-appearance: textfield; /* Firefox */
-    -webkit-appearance: none; /* Chrome, Safari, Opera */
-    appearance: none; /* Estándar */
-    margin: 0; /* Remueve cualquier margen adicional */
-}
-
-/* Asegurar espacio suficiente para 3 cifras */
-input[type="number"] {
-    width: 3.5rem; /* Espacio para al menos 3 cifras y algo más */
-    padding: 5px; /* Espaciado interno */
-    text-align: center; /* Centra el contenido */
-    font-size: 1rem; /* Tamaño de fuente legible */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Asegurar consistencia entre navegadores */
-input[type="number"]::-webkit-inner-spin-button, 
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none; 
-    margin: 0; /* Eliminar espacio adicional en algunos navegadores */
-}
-
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -136,7 +109,7 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
     th, td {
-        padding: 8px;
+        padding: 5px;
     }
 
     td input[type="number"], td select {
@@ -172,4 +145,18 @@ input[type="number"]::-webkit-outer-spin-button {
     td input[type="number"], td select {
         font-size: 0.7rem;
     }
+}
+.enviar-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    background-color: #009b08;
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+.enviar-btn:hover {
+    background-color: #0056b3;
 }

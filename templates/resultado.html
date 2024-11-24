@@ -11,27 +11,79 @@
         <header class="header">
             <h1>Reporte de Resultados</h1>
         </header>
+        
+        <!-- Tipo de Optimización y Valor Óptimo -->
         <section class="section">
             <div class="section-header">
-                <h2>Tipo de Optimización</h2>
+                <h2>Resultados de Optimización</h2>
             </div>
-            <p>{{ tipo_optimizacion|capitalize }}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tipo de Optimización</td>
+                        <td>{{ tipo_optimizacion|capitalize }}</td>
+                    </tr>
+                    <tr>
+                        <td>Valor Función Objetivo</td>
+                        <td><strong>{{ valor_optimo }}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
+        <!-- Valores de las Variables y Costos Reducidos-->
         <section class="section">
             <div class="section-header">
-                <h2>Valor Óptimo</h2>
+                <h2>Valores de las Variables y Costos Reducidos</h2>
             </div>
-            <p><strong>{{ valor_optimo }}</strong></p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Valores</th>
+                        <th>Costos Reducidos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for var in resultados.keys() %}
+                        <tr>
+                            <td><strong>{{ var }}</strong></td>
+                            <td>{{ resultados[var] }}</td>
+                            <td>{{ reduced_costs.get(var, 'N/A') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </section>
+
+        <!-- Precios Duales y Holguras-->
         <section class="section">
             <div class="section-header">
-                <h2>Valores de las Variables</h2>
+                <h2>Precios Duales y Holgura</h2>
             </div>
-            <ul>
-                {% for var, value in resultados.items() %}
-                    <li><strong>{{ var }}:</strong> {{ value }}</li>
-                {% endfor %}
-            </ul>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Restricción</th>
+                        <th>Precio Dual</th>
+                        <th>Holgura / Superávit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for constraint in shadow_prices.keys() %}
+                        <tr>
+                            <td><strong>{{ constraint }}</strong></td>
+                            <td>{{ shadow_prices[constraint] }}</td>
+                            <td>{{ slack_surplus.get(constraint, 'N/A') }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </section>
         <footer>
             <a href="/">Volver al inicio</a>

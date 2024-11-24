@@ -12,7 +12,6 @@
             <h1>Tipo de Optimización: {{ tipo_optimizacion|capitalize }}</h1>
         </div>
         <form action="/resolver" method="POST">
-            <!-- Enviar datos dinámicos ocultos -->
             <input type="hidden" name="tipo_optimizacion" value="{{ tipo_optimizacion }}">
             <input type="hidden" name="variables_decision" value="{{ variables_decision }}">
             <input type="hidden" name="restricciones" value="{{ restricciones }}">
@@ -32,7 +31,7 @@
                         <tr>
                             <td>Coeficientes:</td>
                             {% for i in range(variables_decision) %}
-                                <td><input type="number" name="coef_{{ i }}" placeholder="Ej: 5" required></td>
+                                <td><input type="text" name="coef_{{ i }}" placeholder="0" class="coef-input"></td>
                             {% endfor %}
                         </tr>
                     </table>
@@ -57,7 +56,7 @@
                             <tr>
                                 <td>R{{ j }}</td>
                                 {% for i in range(variables_decision) %}
-                                    <td><input type="number" name="constraint_{{ j }}_var_{{ i }}" placeholder="Ej: 3" required></td>
+                                    <td><input type="text" name="constraint_{{ j }}_var_{{ i }}" placeholder="0" class="coef-input"></td>
                                 {% endfor %}
                                 <td>
                                     <select name="constraint_{{ j }}_relation">
@@ -66,14 +65,14 @@
                                         <option value=">">&gt;</option>
                                     </select>
                                 </td>
-                                <td><input type="number" name="constraint_{{ j }}_rhs" placeholder="Ej: 10" required></td>
+                                <td><input type="text" name="constraint_{{ j }}_rhs" placeholder="0" class="coef-input"></td>
                             </tr>
                         {% endfor %}
                     </table>
                 </div>
             </div>
-            <button type="submit">Resolver</button>
-        </form>        
+            <button type="submit" class="enviar-btn">Resolver</button> 
+        </form>    
     </div>
 
     <script>
@@ -81,6 +80,18 @@
             if (!confirm('¿Estás seguro de que deseas resolver este problema?')) {
                 e.preventDefault();
             }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+
+            form.addEventListener('submit', function(event) {
+                const inputs = document.querySelectorAll('.coef-input');
+                inputs.forEach(function(input) {
+                    if (input.value.trim() === '') {
+                        input.value = '0';
+                    }
+                });
+            });
         });
     </script>
 </body>
