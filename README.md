@@ -72,12 +72,6 @@ Este sistema simplifica la formulación y solución de modelos matemáticos al p
 ├── README.md          # Documentación del proyecto.
 ```
 
-## Autor
-
-- **Nombre:** Amilcar Josias Yujra Chipana
-- **Email:** amilcaryujra23@gmail.com
-- **GitHub:** [Amilcar Yujra](https://github.com/Amilcar06)
-
 ## Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más información.
