@@ -1,6 +1,6 @@
-# ProyectoProgramacionLineal
+# **Sistema Interactivo para Resolución de Programación Lineal con Método Simplex**
 
-**Proyecto de Programación Lineal: Implementación del Método Simplex para Maximización y Minimización**
+**Sistema Interactivo para Resolución de Programación Lineal con Método Simplex: Implementación del Método Simplex para Maximización y Minimización**
 
 Este proyecto es una aplicación basada en Python y Flask que permite resolver problemas de programación lineal utilizando el método Simplex. Está diseñado para facilitar la resolución de modelos matemáticos de optimización, tanto en problemas de maximización como de minimización.
 
