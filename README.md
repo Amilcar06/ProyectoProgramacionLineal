@@ -16,12 +16,6 @@ El objetivo principal de este proyecto es ofrecer una herramienta práctica y ed
 
 Este sistema simplifica la formulación y solución de modelos matemáticos al proporcionar un entorno amigable para realizar cálculos complejos con facilidad.
 
-Aquí tienes un ejemplo claro y estructurado de tu archivo `README.md` para el proyecto Flask. 
-
-# Sistema Interactivo para Resolución de Programación Lineal con Método Simplex
-
-Este proyecto es una aplicación web desarrollada con Flask que permite a los usuarios resolver problemas de programación lineal utilizando el método Simplex. Es compatible con problemas de maximización y minimización, incluyendo análisis de sensibilidad con costos reducidos, precios sombra, y holguras/superávit.
-
 ## Requisitos Previos
 
 - Python 3.8 o superior.
@@ -81,13 +75,9 @@ Este proyecto es una aplicación web desarrollada con Flask que permite a los us
 ## Autor
 
 - **Nombre:** Amilcar Josias Yujra Chipana
-- **Email:** amilcar.yujra@example.com
-- **GitHub:** [Amilcar Chipana](https://github.com/amilcar-chipana)
+- **Email:** amilcaryujra23@gmail.com
+- **GitHub:** [Amilcar Yujra](https://github.com/Amilcar06)
 
 ## Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más información.
-
-### Siguiente paso:
-1. Guarda este contenido en el archivo `README.md` dentro del directorio de tu proyecto.
-2. Asegúrate de agregar imágenes o capturas de pantalla relevantes para ilustrar la interfaz de tu aplicación.
